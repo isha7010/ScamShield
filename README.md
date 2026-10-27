@@ -1,11 +1,11 @@
-# ScamShield AI 🛡️
+# ScamShield AI 
 
 > **Explainable, Multilingual Social Scam & Fraud Detection Framework**  
 > An intelligent system to detect job scams, advance fee fraud, KYC phishing, and social engineering in Indian digital communication (English, Hindi, and Hinglish).
 
 ---
 
-## 🚀 Features
+## Features
 
 - **Hybrid 3-Layer NLP Engine**:
   - **TF-IDF + Calibrated Classifier**: Statistical n-gram patterns trained on scam corpora.
@@ -21,7 +21,7 @@
 
 ---
 
-## 🛠️ Prerequisites
+##  Prerequisites
 
 Before running the project, make sure you have installed:
 - **Node.js** (v18 or higher) and **npm**
@@ -84,7 +84,7 @@ To run the project locally, you need to start both the **Backend** and the **Fro
 
 ---
 
-## 🧪 Running Tests & Evaluation
+##  Running Tests & Evaluation
 
 To verify the machine learning model and run accuracy evaluations:
 
