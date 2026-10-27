@@ -8,9 +8,12 @@ Evaluates:
 - Slice-based Performance: English vs Hindi vs Hinglish
 - Latency & Performance Benchmark: P50, P95, P99 latency (ms)
 """
-
+import sys
 import time
 import numpy as np
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 from sklearn.metrics import (
     accuracy_score,
     precision_score,
@@ -172,12 +175,12 @@ def run_evaluation():
     print(f"  • Log-Loss (Cross-Entropy):  {loss:.4f}   (lower is better)")
 
     print(f"\n[2] Per-Class Breakdown:")
-    print(f"  ┌────────────┬───────────┬────────┬──────────┬─────────┐")
-    print(f"  │ Class      │ Precision │ Recall │ F1-Score │ Samples │")
-    print(f"  ├────────────┼───────────┼────────┼──────────┼─────────┤")
-    print(f"  │ Legitimate │ {prec_legit*100:8.2f}% │ {rec_legit*100:5.2f}% │ {f1_legit:8.4f} │ {int(tn+fp):7d} │")
-    print(f"  │ Scam       │ {prec_scam*100:8.2f}% │ {rec_scam*100:5.2f}% │ {f1_scam:8.4f} │ {int(fn+tp):7d} │")
-    print(f"  └────────────┴───────────┴────────┴──────────┴─────────┘")
+    print(f"  +------------+-----------+--------+----------+---------+")
+    print(f"  | Class      | Precision | Recall | F1-Score | Samples |")
+    print(f"  +------------+-----------+--------+----------+---------+")
+    print(f"  | Legitimate | {prec_legit*100:8.2f}% | {rec_legit*100:5.2f}% | {f1_legit:8.4f} | {int(tn+fp):7d} |")
+    print(f"  | Scam       | {prec_scam*100:8.2f}% | {rec_scam*100:5.2f}% | {f1_scam:8.4f} | {int(fn+tp):7d} |")
+    print(f"  +------------+-----------+--------+----------+---------+")
 
     print(f"\n[3] Confusion Matrix:")
     print(f"  True Negatives  (Legitimate correctly passed): {tn}")
