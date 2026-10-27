@@ -11,7 +11,7 @@ app = FastAPI(title="Social Scam Detector API", version="3.0.0")
 # Allow Vite dev-server (5173 / 5174) to call the API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:5174"],
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
